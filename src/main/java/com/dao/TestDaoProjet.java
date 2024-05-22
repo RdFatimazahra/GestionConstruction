@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.List;
 
 public class TestDaoProjet {
 
@@ -14,18 +15,20 @@ public class TestDaoProjet {
             // Créer un DAO avec la connexion
             DaoProjet daoProjet = new DaoProjet(connection);
 
-            // Créer un nouveau projet pour le test
-            Projet nouveauProjet = new Projet();
-            nouveauProjet.setNomProjet("Projet de test");
-            nouveauProjet.setDescription("Description du projet de test");
-            nouveauProjet.setDateDebut(new Date());
-            nouveauProjet.setDateFin(new Date());
-            nouveauProjet.setBudget(1000.0);
+            // Appeler la méthode afficherListeProjets() du DAO pour obtenir tous les projets
+            List<Projet> projets = daoProjet.afficherListeProjets();
 
-            // Appeler la méthode ajouterProjet() du DAO
-            daoProjet.ajouterProjet(nouveauProjet);
+            // Afficher les projets
+            for (Projet projet : projets) {
+                System.out.println("ID du projet : " + projet.getIdProjet());
+                System.out.println("Nom du projet : " + projet.getNomProjet());
+                System.out.println("Description : " + projet.getDescription());
+                System.out.println("Date de début : " + projet.getDateDebut());
+                System.out.println("Date de fin : " + projet.getDateFin());
+                System.out.println("Budget : " + projet.getBudget());
+                System.out.println("-----------------------");
+            }
 
-            System.out.println("Le projet a été ajouté avec succès !");
         } catch (SQLException e) {
             e.printStackTrace();
         }
