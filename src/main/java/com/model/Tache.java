@@ -15,8 +15,7 @@ public class Tache {
     // Constructeurs
     public Tache() {}
 
-    public Tache(int idTache, String description, Date dateDebut, Date dateFin, int idProjet, String statut) {
-        this.idTache = idTache;
+    public Tache( String description, Date dateDebut, Date dateFin, int idProjet, String statut) {
         this.description = description;
         this.dateDebut = dateDebut;
         this.dateFin = dateFin;
