@@ -13,7 +13,8 @@ public class Projet {
     // Constructeurs
     public Projet() {}
 
-    public Projet(String nomProjet, String description, Date dateDebut, Date dateFin, double budget) {
+    public Projet(int IdProjet,String nomProjet, String description, Date dateDebut, Date dateFin, double budget) {
+        this.idProjet = IdProjet;
         this.nomProjet = nomProjet;
         this.description = description;
         this.dateDebut = dateDebut;
