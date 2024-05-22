@@ -15,20 +15,19 @@ public class TestDaoProjet {
             // Créer un DAO avec la connexion
             DaoProjet daoProjet = new DaoProjet(connection);
 
-            // Appeler la méthode afficherListeProjets() du DAO pour obtenir tous les projets
-            List<Projet> projets = daoProjet.afficherListeProjets();
+            // Créer un nouveau projet pour le test
+            Projet nouveauProjet = new Projet();
+            nouveauProjet.setIdProjet(1); // Assurez-vous que l'ID correspond à un projet existant dans votre base de données
+            nouveauProjet.setNomProjet("Nouveau Nom du Projet");
+            nouveauProjet.setDescription("Nouvelle Description");
+            nouveauProjet.setDateDebut(new Date());
+            nouveauProjet.setDateFin(new Date());
+            nouveauProjet.setBudget(1500.0);
 
-            // Afficher les projets
-            for (Projet projet : projets) {
-                System.out.println("ID du projet : " + projet.getIdProjet());
-                System.out.println("Nom du projet : " + projet.getNomProjet());
-                System.out.println("Description : " + projet.getDescription());
-                System.out.println("Date de début : " + projet.getDateDebut());
-                System.out.println("Date de fin : " + projet.getDateFin());
-                System.out.println("Budget : " + projet.getBudget());
-                System.out.println("-----------------------");
-            }
+            // Appeler la méthode modifierProjet() du DAO pour mettre à jour le projet
+            daoProjet.modifierProjet(nouveauProjet);
 
+            System.out.println("Le projet a été modifié avec succès !");
         } catch (SQLException e) {
             e.printStackTrace();
         }
