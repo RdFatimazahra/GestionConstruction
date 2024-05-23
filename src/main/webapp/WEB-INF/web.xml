@@ -7,10 +7,20 @@
         <servlet-name>createprojet</servlet-name>
         <servlet-class>com.servlet.ServletProjet</servlet-class>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>createprojet</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ServletAfficher</servlet-name>
+        <servlet-class>com.servlet.ServletAfficher</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ServletAfficher</servlet-name>
+        <url-pattern>/ServletAfficher</url-pattern>
     </servlet-mapping>
 
     
