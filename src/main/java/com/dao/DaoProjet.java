@@ -9,14 +9,13 @@ import java.util.ArrayList;
 import java.util.List;
 import com.dao.Iprojet;
 import com.model.Projet;
-import com.util.DbConnection;
 
-public class DaoProjet implements Iprojet{
+public class DaoProjet implements Iprojet {
 
     private Connection connection;
 
-    public DaoProjet(Connection connection) throws SQLException {
-        this.connection = DbConnection.getConnection();
+    public DaoProjet(Connection connection) {
+        this.connection = connection;
     }
 
     @Override

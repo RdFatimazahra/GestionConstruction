@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-@WebServlet("/CreateProjet")
+@WebServlet("/home")
 public class ServletProjet extends HttpServlet {
 
     @Override
