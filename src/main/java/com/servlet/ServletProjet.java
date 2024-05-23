@@ -60,7 +60,7 @@ public class ServletProjet extends HttpServlet {
                 e.printStackTrace();
             }
 
-            response.sendRedirect("success.html");
+            response.sendRedirect("ServletAfficher");
         } catch (ParseException | NumberFormatException e) {
             e.printStackTrace();
             response.sendRedirect("error.html");

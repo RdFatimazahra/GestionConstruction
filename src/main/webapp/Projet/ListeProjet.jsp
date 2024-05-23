@@ -23,6 +23,7 @@
             <th>Date de Début</th>
             <th>Date de Fin</th>
             <th>Budget</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -34,17 +35,22 @@
         <tr>
             <td><%= projet.getIdProjet() %></td>
             <td><%= projet.getNomProjet() %></td>
-            <td><%= projet.getDescription()%></td>
+            <td><%= projet.getDescription() %></td>
             <td><%= projet.getDateDebut() %></td>
             <td><%= projet.getDateFin() %></td>
-            <td><%= projet.getBudget()%></td>
+            <td><%= projet.getBudget() %></td>
+            <td>
+                <a href="ModifierProjet?id=<%= projet.getIdProjet() %>" class="btn btn-warning btn-sm">Modifier</a>
+                <a href="SupprimerProjet?id=<%= projet.getIdProjet() %>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?');">Supprimer</a>
+                <a href="VoirDetailsProjet?id=<%= projet.getIdProjet() %>" class="btn btn-info btn-sm">Détails</a>
+            </td>
         </tr>
         <%
             }
         } else {
         %>
         <tr>
-            <td colspan="6">Aucun projet disponible.</td>
+            <td colspan="7">Aucun projet disponible.</td>
         </tr>
         <%
             }
