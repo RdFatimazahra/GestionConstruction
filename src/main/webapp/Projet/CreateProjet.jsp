@@ -50,7 +50,7 @@
 
 <h2>Ajouter un Projet</h2>
 
-<form action="/ajouterProjet" method="post">
+<form action="/GestionConstruction_war/CreateProjet" method="post">
     <label for="nomProjet">Nom du Projet</label>
     <input type="text" id="nomProjet" name="nomProjet" required>
 

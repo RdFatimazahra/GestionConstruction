@@ -13,11 +13,16 @@ public class DbConnection {
     public static Connection getConnection() throws SQLException {
         Connection connection = null;
         try {
+            Class.forName("org.postgresql.Driver");
+
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             System.err.println("Error connecting to the database: " + e.getMessage());
             throw e;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
+
         return connection;
     }
 }
