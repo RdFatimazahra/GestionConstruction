@@ -29,6 +29,8 @@
         <tbody>
         <%
             List<Projet> listProjet = (List<Projet>) request.getAttribute("afficherList");
+            listProjet.sort((p1, p2) -> Integer.compare(p1.getIdProjet(), p2.getIdProjet()));
+
             if (listProjet != null) {
                 for (Projet projet : listProjet) {
         %>
