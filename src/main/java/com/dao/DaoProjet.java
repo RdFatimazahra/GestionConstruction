@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import com.dao.Iprojet;
+
 import com.model.Projet;
 
 public class DaoProjet implements Iprojet {
@@ -17,7 +17,6 @@ public class DaoProjet implements Iprojet {
     public DaoProjet(Connection connection) {
         this.connection = connection;
     }
-
     @Override
     public void ajouterProjet(Projet projet) throws SQLException {
         String query = "INSERT INTO Projet (NomProjet, Description, DateDebut, DateFin, Budget) VALUES (?, ?, ?, ?, ?)";
@@ -73,5 +72,26 @@ public class DaoProjet implements Iprojet {
             stmt.setInt(1, idProjet);
             stmt.executeUpdate();
         }
+    }
+
+    @Override
+    public Projet rechbyid(int id) throws SQLException {
+        String query = "SELECT * FROM Projet WHERE IdProjet = ?";
+        Projet projet = null;
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                projet = new Projet();
+                projet.setIdProjet(rs.getInt("IdProjet"));
+                projet.setNomProjet(rs.getString("NomProjet"));
+                projet.setDescription(rs.getString("Description"));
+                projet.setDateDebut(rs.getDate("DateDebut"));
+                projet.setDateFin(rs.getDate("DateFin"));
+                projet.setBudget(rs.getDouble("Budget"));
+
+            }
+        }
+        return projet;
     }
 }
