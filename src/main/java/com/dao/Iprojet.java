@@ -12,6 +12,7 @@ public interface Iprojet {
     List<Projet> afficherListeProjets() throws SQLException;
     void modifierProjet(Projet projet) throws SQLException;
     void supprimerProjet(int idProjet) throws SQLException;
+    Projet rechbyid(int idProjet) throws SQLException;
 }
 
 

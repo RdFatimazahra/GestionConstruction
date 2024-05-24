@@ -12,7 +12,8 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-@WebServlet(name = "ServletAfficher", value = "/ServletAfficher")
+@WebServlet("/ServletAfficher")
+
 public class ServletAfficher extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
