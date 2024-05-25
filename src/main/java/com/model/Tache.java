@@ -23,6 +23,9 @@ public class Tache {
         this.statut = statut;
     }
 
+    public Tache(int idTache, String description, java.sql.Date dateDebut, java.sql.Date dateFin, int idProjet, String statut) {
+    }
+
     // Getters et Setters
     public int getIdTache() {
         return idTache;

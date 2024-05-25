@@ -1,37 +1,41 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
-    <title><c:out value="${tache != null ? 'Modifier' : 'Ajouter'}"/> Tâche</title>
+    <meta charset="UTF-8">
+    <title>Ajouter Tâche</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 </head>
 <body>
-<h2><c:out value="${tache != null ? 'Modifier' : 'Ajouter'}"/> Tâche</h2>
-<form action="taches" method="post">
-    <input type="hidden" name="action" value="${tache != null ? 'modifier' : 'ajouter'}"/>
-    <input type="hidden" name="idTache" value="${tache != null ? tache.idTache : ''}"/>
-    <div>
-        <label>Description:</label>
-        <input type="text" name="description" value="${tache != null ? tache.description : ''}" required/>
-    </div>
-    <div>
-        <label>Date Début:</label>
-        <input type="date" name="dateDebut" value="${tache != null ? tache.dateDebut : ''}" required/>
-    </div>
-    <div>
-        <label>Date Fin:</label>
-        <input type="date" name="dateFin" value="${tache != null ? tache.dateFin : ''}" required/>
-    </div>
-    <div>
-        <label>Projet:</label>
-        <input type="number" name="idProjet" value="${tache != null ? tache.idProjet : ''}" required/>
-    </div>
-    <div>
-        <label>Statut:</label>
-        <input type="text" name="statut" value="${tache != null ? tache.statut : ''}" required/>
-    </div>
-    <div>
-        <button type="submit">Enregistrer</button>
-    </div>
-</form>
-<a href="taches?action=afficher">Retour à la liste des Tâches</a>
+
+<div class="container">
+    <h1 class="mt-5">Ajouter une Nouvelle Tâche</h1>
+    <form action="ServletTache" method="post">
+        <input type="hidden" name="action" value="insert">
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description" required>
+        </div>
+        <div class="form-group">
+            <label for="dateDebut">Date de Début</label>
+            <input type="date" class="form-control" id="dateDebut" name="dateDebut" required>
+        </div>
+        <div class="form-group">
+            <label for="dateFin">Date de Fin</label>
+            <input type="date" class="form-control" id="dateFin" name="dateFin" required>
+        </div>
+        <div class="form-group">
+            <label for="idProjet">ID Projet</label>
+            <input type="number" class="form-control" id="idProjet" name="idProjet" required>
+        </div>
+        <div class="form-group">
+            <label for="statut">Statut</label>
+            <input type="text" class="form-control" id="statut" name="statut" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <a href="ServletTache" class="btn btn-secondary">Annuler</a>
+    </form>
+</div>
+
 </body>
 </html>
