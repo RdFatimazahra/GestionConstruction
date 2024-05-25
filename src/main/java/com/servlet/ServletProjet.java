@@ -19,17 +19,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-@WebServlet("/home")
+@WebServlet("/ServletProjet")
 public class ServletProjet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String path = req.getServletPath();
-        if(path.equals("/home")) {
+        if(path.equals("/ServletProjet")) {
             req.getRequestDispatcher("Projet/CreateProjet.jsp").forward(req, resp);
         }
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
