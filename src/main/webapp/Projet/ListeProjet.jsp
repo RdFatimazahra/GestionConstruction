@@ -14,6 +14,7 @@
 
 <div class="container">
     <h1 class="mt-5">Liste des Projets</h1>
+    <a href="ServletProjet" class="btn btn-primary btn-sm mb-3">Ajouter Projet</a>
     <table class="table table-bordered mt-3">
         <thead>
         <tr>
@@ -29,6 +30,8 @@
         <tbody>
         <%
             List<Projet> listProjet = (List<Projet>) request.getAttribute("afficherList");
+            listProjet.sort((p1, p2) -> Integer.compare(p1.getIdProjet(), p2.getIdProjet()));
+
             if (listProjet != null) {
                 for (Projet projet : listProjet) {
         %>
@@ -42,7 +45,8 @@
             <td>
                 <a href="ModifierProjet?id=<%= projet.getIdProjet() %>" class="btn btn-warning btn-sm">Modifier</a>
                 <a href="SupprimerProjet?id=<%= projet.getIdProjet() %>" class="btn btn-danger btn-sm" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce projet ?');">Supprimer</a>
-                <a href="VoirDetailsProjet?id=<%= projet.getIdProjet() %>" class="btn btn-info btn-sm">Détails</a>
+                <a href="DetailsProjet?id=<%= projet.getIdProjet() %>" class="btn btn-info btn-sm">Détails</a>
+
             </td>
         </tr>
         <%

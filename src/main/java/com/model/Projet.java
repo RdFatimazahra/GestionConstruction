@@ -22,6 +22,9 @@ public class Projet {
         this.budget = budget;
     }
 
+    public Projet(String nomProjet, String description, Date dateDebut, Date dateFin, double budget) {
+    }
+
     // Getters et Setters
     public int getIdProjet() {
         return idProjet;

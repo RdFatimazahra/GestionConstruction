@@ -5,7 +5,14 @@
          version="5.0">
 
 
-
+    <servlet>
+        <servlet-name>ServletProjet</servlet-name>
+        <servlet-class>com.servlet.ServletProjet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletProjet</servlet-name>
+        <url-pattern>/ServletProjet2</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 
