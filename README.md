@@ -32,4 +32,17 @@ L'application ConstructionXpert est une application qui permet de créer et de g
 
 • Mettre à jour les détails d'une ressource existante.
 
-• Supprimer une ressource existante.
+• Supprimer une ressource existante. </br>
+<h4>Voilà la conception UML du projet :</h4>
+
+<h4>Diagramme de cas d'utilisation :</h4>
+<img width="567" alt="image" src="https://github.com/RdFatimazahra/GestionConstruction/assets/157012170/8f7e0329-2b19-45f0-aa48-cf6fe6226420">
+
+<h4>Diagramme de classe :</h4>
+<img width="539" alt="image" src="https://github.com/RdFatimazahra/GestionConstruction/assets/157012170/f00cb67b-4d3e-4d6e-85da-96c8a6e036b1">
+
+<h4>Diagramme de séquence :</h4>
+<img width="563" alt="image" src="https://github.com/RdFatimazahra/GestionConstruction/assets/157012170/41654f94-f75e-4afa-8900-c794cdd03a21">
+
+
+
