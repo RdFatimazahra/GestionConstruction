@@ -69,6 +69,29 @@ public class DaoTache implements Itache {
             stmt.executeUpdate();
         }
     }
+
+    @Override
+    public List<Tache> afficherListeTachesByIdProjet(int idProjet) throws SQLException {
+        List<Tache> taches = new ArrayList<>();
+        String query = "SELECT * FROM Tache WHERE IdProjet = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, idProjet);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()) {
+                Tache tache = new Tache(
+                        rs.getInt("IdTache"),
+                        rs.getString("Description"),
+                        rs.getDate("DateDebut"),
+                        rs.getDate("DateFin"),
+                        rs.getInt("IdProjet"),
+                        rs.getString("Statut")
+                );
+                taches.add(tache);
+            }
+        }
+        return taches;
+    }
+
     @Override
     // Ajout de la méthode searchById
     public Tache searchById(int id) throws SQLException {
