@@ -44,13 +44,74 @@
         input[type="submit"]:hover {
             background-color: #45a049;
         }
+        .error {
+            color: red;
+            margin-bottom: 10px;
+        }
     </style>
+    <script>
+        function validateForm() {
+            var isValid = true;
+
+            var nomProjet = document.getElementById("nomProjet");
+            var description = document.getElementById("description");
+            var dateDebut = document.getElementById("dateDebut");
+            var dateFin = document.getElementById("dateFin");
+            var budget = document.getElementById("budget");
+
+            // Clear previous errors
+            var errorElements = document.getElementsByClassName("error");
+            while (errorElements.length > 0) {
+                errorElements[0].parentNode.removeChild(errorElements[0]);
+            }
+
+            if (nomProjet.value.trim() === "") {
+                showError(nomProjet, "Le nom du projet est requis.");
+                isValid = false;
+            }
+
+            if (description.value.trim() === "") {
+                showError(description, "La description est requise.");
+                isValid = false;
+            }
+
+            if (dateDebut.value === "") {
+                showError(dateDebut, "La date de début est requise.");
+                isValid = false;
+            }
+
+            if (dateFin.value === "") {
+                showError(dateFin, "La date de fin est requise.");
+                isValid = false;
+            }
+
+            if (budget.value === "" || parseFloat(budget.value) <= 0) {
+                showError(budget, "Le budget doit être un nombre positif.");
+                isValid = false;
+            }
+
+            // Check if the end date is after the start date
+            if (dateDebut.value && dateFin.value && new Date(dateFin.value) < new Date(dateDebut.value)) {
+                showError(dateFin, "La date de fin doit être postérieure à la date de début.");
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function showError(element, message) {
+            var error = document.createElement("div");
+            error.className = "error";
+            error.innerText = message;
+            element.parentNode.insertBefore(error, element.nextSibling);
+        }
+    </script>
 </head>
 <body>
 
 <h2>Ajouter un Projet</h2>
 
-<form action="ServletProjet" method="post">
+<form action="ServletProjet" method="post" onsubmit="return validateForm()">
     <label for="nomProjet">Nom du Projet</label>
     <input type="text" id="nomProjet" name="nomProjet" required>
 
@@ -71,4 +132,3 @@
 
 </body>
 </html>
-

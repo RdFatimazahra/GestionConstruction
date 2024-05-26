@@ -10,6 +10,9 @@ public interface Itache {
     List<Tache> afficherListeTaches() throws SQLException;
     void modifierTache(Tache tache) throws SQLException;
     void supprimerTache(int idTache) throws SQLException;
+
+    List<Tache> afficherListeTachesByIdProjet(int idProjet) throws SQLException;
+
     public Tache searchById(int id) throws SQLException;
 
 }
