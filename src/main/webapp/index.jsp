@@ -12,46 +12,34 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
-        <div class="sidebar-header">
-            <img src="images/Black%20Orange%20minimalistic%20construction%20company%20logo%20(1).png" alt="ConstructionXpert Logo" class="logo">
+        <div class="">
+            <img src="images/test.png" alt="ConstructionXpert Logo" class="logo" style="width: 249px">
         </div>
-        <ul class="list-unstyled components">
+        <ul class="list-unstyled components" style="color: white;">
             <li>
-                <a href="#">
+                <a href="#" style="color: white">
                     <i class="fas fa-home"></i>
                     Home
                 </a>
             </li>
-
             <li>
-                <a href="ServletAfficher" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="ServletAfficher" style="color: white">
                     <i class="fas fa-project-diagram"></i>
-                    Projects
+                    Projets
                 </a>
-
             </li>
             <li>
-                <a href="#tasksSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="#" style="color: white">
                     <i class="fas fa-tasks"></i>
-                    Tasks
+                    Taches
                 </a>
-
             </li>
             <li>
-                <a href="#resourcesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="#" style="color: white">
                     <i class="fas fa-boxes"></i>
-                    Resources
-                </a>
-
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fas fa-cog"></i>
-                    Services
+                    Ressources
                 </a>
             </li>
-
         </ul>
         <div class="sidebar-footer">
             <p>Subscribe for newsletter</p>
@@ -68,9 +56,11 @@
                 </button>
             </div>
         </nav>
-        <h2>Sidebar #05</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <div class="container" style="color: white">
+            <img src="images/your_image.jpg" alt="Construction Image" class="img-fluid">
+            <p>ConstructionXpert rend la gestion de votre projet plus facile ..</p>
+            <p>..................................</p>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

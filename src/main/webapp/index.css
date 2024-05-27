@@ -11,24 +11,13 @@ body {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #007bff;
+    background: #6D96FF;
     color: #fff;
     transition: all 0.3s;
 }
 
 #sidebar.active {
     margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #007bff;
-    text-align: center;
-}
-
-#sidebar .sidebar-header .logo {
-    max-width: 100%;
-    height: auto;
 }
 
 #sidebar ul.components {
@@ -44,7 +33,7 @@ body {
     padding: 10px;
     font-size: 1.1em;
     display: block;
-    color: #d1d1d1;
+    color: white;
 }
 
 #sidebar ul li a:hover {
@@ -59,12 +48,13 @@ body {
 
 #sidebar .sidebar-footer {
     padding: 20px;
-    background: #007bff;
+    padding-top: 143px;
     text-align: center;
+    background: #6D96FF; /* Match the sidebar color */
 }
 
 #sidebar .sidebar-footer p {
-    color: #d1d1d1;
+    color: white;
     margin-bottom: 10px;
 }
 
@@ -107,4 +97,14 @@ body {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+.container {
+    text-align: center;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }
